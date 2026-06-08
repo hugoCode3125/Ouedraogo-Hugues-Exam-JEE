@@ -2,13 +2,14 @@ package com.example.backend.dto;
 
 import com.example.backend.enums.StatutCredit;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.Date;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 public class CreditDTO {
 
     private Long id;
