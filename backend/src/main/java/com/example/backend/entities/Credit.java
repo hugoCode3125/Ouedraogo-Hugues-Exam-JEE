@@ -11,7 +11,6 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Credit {
 

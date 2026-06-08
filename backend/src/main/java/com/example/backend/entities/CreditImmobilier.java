@@ -8,7 +8,6 @@ import lombok.experimental.SuperBuilder;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
 public class CreditImmobilier extends Credit {
 
     private String typeBien;

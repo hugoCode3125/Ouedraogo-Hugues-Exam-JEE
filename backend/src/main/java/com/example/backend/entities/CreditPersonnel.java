@@ -8,7 +8,6 @@ import lombok.experimental.SuperBuilder;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
 public class CreditPersonnel extends Credit {
 
     private String motif;
