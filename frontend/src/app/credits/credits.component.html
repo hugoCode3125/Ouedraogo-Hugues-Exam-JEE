@@ -1,0 +1,43 @@
+<div class="container mt-4">
+
+  <h2>Liste des Crédits</h2>
+
+  <table class="table table-striped mt-3">
+
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Montant</th>
+        <th>Durée</th>
+        <th>Taux</th>
+        <th>Type</th>
+        <th>Statut</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let c of credits">
+
+        <td>{{ c.id }}</td>
+        <td>{{ c.montant }}</td>
+        <td>{{ c.dureeRemboursement }}</td>
+        <td>{{ c.tauxInteret }}%</td>
+
+        <td>
+          <span class="badge" [ngClass]="badge(getType(c))">
+            {{ getType(c) }}
+          </span>
+        </td>
+
+        <td>
+          <span class="badge bg-secondary">
+            {{ c.statut }}
+          </span>
+        </td>
+
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>

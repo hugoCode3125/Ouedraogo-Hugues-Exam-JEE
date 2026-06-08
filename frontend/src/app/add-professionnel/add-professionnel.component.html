@@ -1,0 +1,13 @@
+<div class="container mt-4">
+
+  <h3>Ajouter Crédit Professionnel</h3>
+
+  <input class="form-control mb-2" placeholder="Montant" [(ngModel)]="data.montant">
+  <input class="form-control mb-2" placeholder="Durée" [(ngModel)]="data.dureeRemboursement">
+  <input class="form-control mb-2" placeholder="Taux" [(ngModel)]="data.tauxInteret">
+  <input class="form-control mb-2" placeholder="Motif" [(ngModel)]="data.motif">
+  <input class="form-control mb-2" placeholder="Raison Sociale" [(ngModel)]="data.raisonSociale">
+
+  <button class="btn btn-warning" (click)="save()">Ajouter</button>
+
+</div>

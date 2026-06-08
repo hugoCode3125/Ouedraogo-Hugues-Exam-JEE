@@ -9,8 +9,8 @@ export class CreditService {
   constructor(private http: HttpClient) {}
 
   getCredits(clientId: number) {
-  return this.http.get<any[]>(`${this.api}/credits/client/${clientId}`);
-}
+    return this.http.get<any[]>(`${this.api}/credits/client/${clientId}`);
+  }
 
   addPersonnel(data: any) {
     return this.http.post(`${this.api}/credits/personnel`, data);
@@ -22,9 +22,5 @@ export class CreditService {
 
   addProfessionnel(data: any) {
     return this.http.post(`${this.api}/credits/professionnel`, data);
-  }
-
-  addRemboursement(data: any) {
-    return this.http.post(`${this.api}/credits/remboursement`, data);
   }
 }

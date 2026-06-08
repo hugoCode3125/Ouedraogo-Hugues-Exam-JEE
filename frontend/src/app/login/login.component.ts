@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../services/auth.service';
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +14,7 @@ export class LoginComponent {
 
   username = '';
   password = '';
+  error = '';
 
   constructor(
     private auth: AuthService,
@@ -21,12 +22,19 @@ export class LoginComponent {
   ) {}
 
   login() {
+    this.error = '';
+
     this.auth.login({
       username: this.username,
       password: this.password
-    }).subscribe(token => {
-      this.auth.saveToken(token);
-      this.router.navigate(['/credits']);
+    }).subscribe({
+      next: (token: string) => {
+        this.auth.saveToken(token);
+        this.router.navigate(['/credits']);
+      },
+      error: () => {
+        this.error = 'Username ou password incorrect';
+      }
     });
   }
 }
